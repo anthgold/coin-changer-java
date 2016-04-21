@@ -43,6 +43,9 @@ public class App {
       currentCents -= 5;
       coinCounts[2]++;
     }
+    // Penny counter here
+    Integer pennyCount = currentCents;
+    coinCounts[3] = pennyCount;
 
     System.out.println(Arrays.toString(coinCounts));
     return Arrays.toString(coinCounts);

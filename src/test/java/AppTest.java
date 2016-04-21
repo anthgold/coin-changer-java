@@ -24,7 +24,7 @@ public class AppTest extends FluentTest{
     goTo("http://localhost:4567/");
     assertThat(pageSource()).contains("");
   }
-
+/*
   @Test  // nameOfFunction_testCase_expectedResult()
   public void giveChange_twentyFiveCents_oneQuarter() {
     App testApp = new App();
@@ -42,12 +42,23 @@ public class AppTest extends FluentTest{
     App testApp = new App();
     String expected = "[0, 1, null, null]";
     assertEquals(expected, testApp.giveChange(10));
-  } 
+  }
   @Test
   public void giveChange_fiveCents_oneNickel() {
     App testApp = new App();
     String expected = "[0, 0, 1, null]";
     assertEquals(expected, testApp.giveChange(5));
   }
-
+  @Test
+  public void giveChange_twoCents_twoPenny() {
+    App testApp = new App();
+    String expected = "[0, 0, 0, 2]";
+    assertEquals(expected, testApp.giveChange(2));
+  } */
+  @Test
+  public void giveChange_fortyOneCents_oneOfEach() {
+    App testApp = new App();
+    String expected = "[1, 1, 1, 1]"; // did pass
+    assertEquals(expected, testApp.giveChange(41));
+  }
 }
