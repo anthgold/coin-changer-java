@@ -10,12 +10,18 @@ import static spark.Spark.*;
 
 public class App {
   public static void main(String[] args) {
-    // String layout = "templates/layout.vtl";
-    // get("/", (request, response) -> {
-    //   Map<String, Object> model = new HashMap<String, Object>();
-    //   model.put("template", "templates/input.vtl");
-    //   return new ModelAndView(model, layout);
-    // }, new VelocityTemplateEngine());
+    String layout = "templates/layout.vtl"; // declares layout
+    get("/", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/input.vtl"); // assigns input template to model
+      return new ModelAndView(model, layout); // puts model inside of layout
+    }, new VelocityTemplateEngine());
+
+    get("/output", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/input.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
     // velocity stuff.
 
   }
