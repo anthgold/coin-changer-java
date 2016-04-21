@@ -25,17 +25,23 @@ public class AppTest extends FluentTest{
     assertThat(pageSource()).contains("");
   }
 
-  @Test
+  @Test  // nameOfFunction_testCase_expectedResult()
   public void giveChange_twentyFiveCents_oneQuarter() {
     App testApp = new App();
-    Integer expected = 1;
+    String expected = "[1, 0, null, null]"; // maps the string
     assertEquals(expected, testApp.giveChange(25));
   }
   @Test
   public void giveChange_sixtyCents_twoQuarters() {
     App testApp = new App();
-    Integer expected = 2;
+    String expected = "[2, 1, null, null]";
     assertEquals(expected, testApp.giveChange(60));
+  }
+  @Test
+  public void giveChange_tenCents_oneDime() {
+    App testApp = new App();
+    String expected = "[0, 1, null, null]";  // should fail
+    assertEquals(expected, testApp.giveChange(10));
   }
 
 }
