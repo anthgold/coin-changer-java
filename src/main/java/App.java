@@ -19,7 +19,14 @@ public class App {
 
     get("/output", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      model.put("template", "templates/input.vtl");
+      model.put("template", "templates/output.vtl");
+
+      App myApp = new App();
+
+      Integer inputtedChange = Integer.parseInt(request.queryParams("change"));
+      Object result = App.giveChange(inputtedChange);
+      model.put("result", result);
+
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
     // velocity stuff.
@@ -54,7 +61,8 @@ public class App {
     coinCounts[3] = pennyCount;
 
     System.out.println(Arrays.toString(coinCounts));
-    return Arrays.toString(coinCounts);
+    String outputString = "You get " + coinCounts[0] + " quarter(s), " + coinCounts[1] + " dime(s), " + coinCounts[2] + " nickel(s), and " + coinCounts[3] + " penn(y/ies).";
+    return outputString;
   }
 }
 
