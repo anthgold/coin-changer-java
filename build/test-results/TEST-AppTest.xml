@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="AppTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-04-21T17:00:56" hostname="epicodus-47.local" time="0.17">
+  <properties/>
+  <testcase name="giveChange_twentyFiveCents_oneQuarter" classname="AppTest" time="0.003"/>
+  <testcase name="rootTest" classname="AppTest" time="0.156"/>
+  <testcase name="giveChange_sixtyCents_twoQuarters" classname="AppTest" time="0.001"/>
+  <system-out><![CDATA[[1, null, null, null]
+[2, null, null, null]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
