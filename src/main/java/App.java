@@ -37,6 +37,12 @@ public class App {
       coinCounts[1]++;
     }
     // Nickel loop here
+    Integer nickelCount = 0;
+    coinCounts[2] = nickelCount;
+    while(currentCents >= 5) {
+      currentCents -= 5;
+      coinCounts[2]++;
+    }
 
     System.out.println(Arrays.toString(coinCounts));
     return Arrays.toString(coinCounts);

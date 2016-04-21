@@ -40,8 +40,14 @@ public class AppTest extends FluentTest{
   @Test
   public void giveChange_tenCents_oneDime() {
     App testApp = new App();
-    String expected = "[0, 1, null, null]";  // should fail
+    String expected = "[0, 1, null, null]";
     assertEquals(expected, testApp.giveChange(10));
+  } 
+  @Test
+  public void giveChange_fiveCents_oneNickel() {
+    App testApp = new App();
+    String expected = "[0, 0, 1, null]";
+    assertEquals(expected, testApp.giveChange(5));
   }
 
 }
